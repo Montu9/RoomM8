@@ -1,0 +1,45 @@
+@use "../../../styles/colors.scss";
+
+.tile {
+    background-color: colors.$app-tile;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 20px;
+
+    h1 {
+        margin: 0px 0px 20px 0px;
+        color: colors.$detail-gray;
+        text-align: center;
+        font-weight: 500;
+        font-size: 25px;
+    }
+
+    p {
+        color: colors.$detail-gray;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    form {
+        background-color: colors.$app-tile;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        h1 {
+            color: colors.$detail-gray;
+            text-align: center;
+            font-weight: 500;
+        }
+        .input-wrapper {
+            display: flex;
+            gap: 20px;
+            & * {
+                width: 100%;
+            }
+        }
+    }
+}

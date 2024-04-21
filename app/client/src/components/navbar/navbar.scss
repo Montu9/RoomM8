@@ -1,0 +1,120 @@
+@use "../../styles/colors.scss";
+
+.navbar {
+    height: 100vh;
+    position: sticky;
+    width: 100px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: colors.$menu-bg;
+    color: colors.$menu-font;
+
+    .navbar-top {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .nav-logo {
+            height: 60px;
+            img {
+                height: 100%;
+            }
+        }
+
+        .nav-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .nav-profile-icon {
+                height: 80px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                cursor: pointer;
+                float: left;
+                color: colors.$menu-font;
+                font-size: 34px;
+            }
+            p {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                letter-spacing: -10px;
+            }
+        }
+    }
+
+    .navbar-mid,
+    .navbar-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .menu-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            outline: 0;
+
+            .menu-icon-link {
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                cursor: pointer;
+                float: left;
+                transition: all 150ms 0ms ease-in;
+                color: colors.$menu-font;
+
+                &:hover {
+                    background-color: colors.$menu-detail;
+                    transform: scale(1.1);
+                    transition: all 150ms 0ms ease-in;
+                }
+
+                &:hover + .menu-label {
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all 150ms 0ms ease-in;
+                }
+                .menu-icon {
+                    font-size: 30px;
+                }
+            }
+
+            .menu-label {
+                position: absolute;
+                left: 90px;
+                border-radius: 10px;
+                background-color: colors.$menu-bg;
+                color: colors.$white;
+                padding: 10px 15px;
+                float: left;
+                text-transform: uppercase;
+                font-weight: 600;
+                opacity: 0;
+                visibility: hidden;
+                font-size: 13px;
+            }
+        }
+
+        .active {
+            background-color: colors.$detail-main-color;
+            color: colors.$white !important;
+
+            &:hover {
+                background-color: colors.$detail-main-light !important;
+            }
+        }
+    }
+}

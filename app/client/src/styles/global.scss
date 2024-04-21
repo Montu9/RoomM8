@@ -1,0 +1,120 @@
+@use "./colors.scss";
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+.error-msg {
+    display: inline-block !important;
+    background-color: colors.$bg-err !important;
+    color: colors.$detail-err !important;
+    font-weight: 500 !important;
+    padding: 10px 0px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    margin: 0;
+    font-size: 13px !important;
+}
+
+.success-msg {
+    display: inline-block !important;
+    background-color: colors.$bg-success !important;
+    color: colors.$detail-success !important;
+    font-weight: 500 !important;
+    padding: 10px 0px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    margin: 0;
+    font-size: 13px !important;
+}
+
+.offscreen {
+    display: none;
+}
+
+input,
+select {
+    outline: 0;
+    border: 0;
+}
+
+input[type="submit"],
+input[type="button"] {
+    border-radius: 10px;
+    background-color: colors.$detail-main-color;
+    color: colors.$white;
+    font-weight: 500;
+    padding: 15px 0px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 150ms ease-out;
+
+    &:hover {
+        background-color: colors.$detail-main-dark;
+        transition: background-color 150ms ease-out;
+    }
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        padding: 10px 10px;
+        width: 100%;
+        line-height: 1;
+        font-size: 14px;
+        cursor: pointer;
+        border-bottom: 2px solid colors.$detail-light;
+        border-radius: 10px;
+
+        &:focus ~ label,
+        &:not(:placeholder-shown) ~ label {
+            transform: scale(0.9) translate(-10px, -35px);
+            transition: transform 100ms ease-out;
+        }
+    }
+    label {
+        position: absolute;
+        left: 15px;
+        font-size: 14px;
+        color: colors.$detail-gray;
+        cursor: pointer;
+        transition: transform 100ms ease-out;
+    }
+    select {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        option {
+            color: colors.$detail-gray;
+        }
+    }
+}
+.app-top {
+    color: colors.$white;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 30px;
+
+    .app-top-icon {
+        font-size: 50px;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+}
+
+.app-content {
+    display: flex;
+    justify-content: center;
+}

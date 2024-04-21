@@ -1,0 +1,13 @@
+@use "../../styles/colors.scss";
+
+.app-wrapper {
+    background-color: colors.$app-bg;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+
+    .app-main {
+        flex: 1;
+    }
+}

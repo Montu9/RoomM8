@@ -1,0 +1,44 @@
+@use "../../../styles/colors.scss";
+
+.tile {
+    background-color: colors.$app-tile;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h1 {
+            color: colors.$detail-gray;
+            text-align: center;
+            font-weight: 500;
+        }
+        .input-wrapper {
+            display: flex;
+            gap: 20px;
+            & * {
+                width: 100%;
+            }
+        }
+
+        .errHolder {
+            display: flex;
+            flex-direction: column;
+
+            .errForm {
+                color: #ff0033;
+                font-weight: 600;
+                font-size: 11px;
+                padding: 3px 0px 2px 0px;
+                margin: 0;
+                text-align: left;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+}

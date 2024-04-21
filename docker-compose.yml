@@ -1,0 +1,56 @@
+version: "3.8"
+services:
+  client:
+    build:
+      context: ./app/client
+    restart: always
+    container_name: "client"
+    networks:
+      - react-express
+    volumes:
+      - ./app/client:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./app/server
+    restart: always
+    container_name: "server"
+    depends_on:
+      - mongo
+    networks:
+      - express-mongo
+      - react-express
+    ports:
+      - 3001:3001
+    volumes:
+      - ./app/server:/usr/src/app
+      - /usr/src/app/node_modules
+
+  mongo:
+    restart: always
+    image: mongo:4.2.0
+    ports:
+      - 27017:27017
+    container_name: "db"
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - ./data:/data/db
+    command: [--auth]
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin-user
+      - MONGO_INITDB_ROOT_PASSWORD=AdminPassword
+      - MONGO_INITDB_DATABASE=Roommate
+    networks:
+      - express-mongo
+
+networks:
+  express-mongo:
+    driver: bridge
+    internal: true
+  react-express:
+    driver: bridge

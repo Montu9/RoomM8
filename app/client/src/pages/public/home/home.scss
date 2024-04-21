@@ -1,0 +1,99 @@
+@use "../../../styles/colors.scss";
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    background-color: colors.$bg-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card {
+        border-radius: 21px;
+        display: flex;
+        min-height: 600px;
+        width: 992px;
+        -webkit-box-shadow: 0px 0px 33px 7px rgba(17, 19, 27, 1);
+        -moz-box-shadow: 0px 0px 33px 7px rgba(17, 19, 27, 1);
+        box-shadow: 0px 0px 33px 7px rgba(17, 19, 27, 1);
+        overflow: hidden;
+    }
+
+    .left {
+        background-color: colors.$white;
+        flex: 1;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+
+        .home-top {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            box-sizing: border-box;
+
+            h1 {
+                font-weight: 700;
+                font-size: 60px;
+                margin: 0;
+
+                span {
+                    color: colors.$detail-main-color;
+                }
+            }
+
+            img {
+                height: 60px;
+                width: 60px;
+            }
+        }
+
+        .home-mid {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .home-content {
+                border-radius: 15px;
+                padding: 20px;
+
+                h1 {
+                    font-weight: 500;
+
+                    span {
+                        font-style: italic;
+                        font-weight: 200;
+                        font-size: 60px;
+                    }
+                }
+                p {
+                    color: colors.$white;
+                    text-align: center;
+                    font-weight: 300;
+                }
+
+                h3,
+                h2 {
+                    min-width: 200px;
+                    max-width: 300px;
+                    background-color: colors.$detail-main-color;
+                    color: colors.$white;
+                    padding: 20px 40px;
+                    border-radius: 10px;
+                    font-weight: 400;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .right {
+        flex: 2;
+        max-height: 100vh;
+        background: url("../../../assets/img/homeBanner.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
